@@ -56,25 +56,4 @@ export class DownloadComponent implements OnInit {
 
         this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Fehler beim herunterladen des Videos' });
     }
-
-    download() {
-        console.log(`DOWNLOADING - ${this.link} in format ${this.selectedFormat}`);
-
-
-
-
-        this.downloaderService.downloadFormat(this.selectedFormat, this.link).then(data => {
-
-            console.log(`SUCCESS `);
-
-            //this.ref.close({ type: this.type, success: true, time: appointement.time, date: appointement.date, bookingnumber: appointement.bookingnumber });
-        }).catch(error => {
-            console.log(`ERROR - ${JSON.stringify(error)}`);
-            //this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Fehler beim Aktualisieren der Daten' });
-        }).finally(() => {
-            console.log("FINISHED");
-            //this.isLoading = false;
-        });;
-    }
-
 }
