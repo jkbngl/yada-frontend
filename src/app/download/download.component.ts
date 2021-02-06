@@ -36,8 +36,8 @@ export class DownloadComponent implements OnInit {
     ngOnInit(): void {
         this.selectedFormat = this.formats[0];
 
-        //this.downLoadUrl = 'https://yada-api.herokuapp.com/download?'
-        this.downLoadUrl = 'http://192.168.178.38:8000/download?'
+        this.downLoadUrl = 'https://yada-api.herokuapp.com/download?'
+        //this.downLoadUrl = 'http://192.168.178.38:8000/download?'
     }
 
     setDownloadMode() {
