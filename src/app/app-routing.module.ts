@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { DownloadComponent } from './download/download.component';
 
 const routes: Routes = [
+    { path: '', component: DownloadComponent },
     { path: 'download', component: DownloadComponent }
 ];
 
