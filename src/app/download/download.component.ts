@@ -17,7 +17,7 @@ interface Format {
 export class DownloadComponent implements OnInit {
 
     formats: Format[];
-    selectedFormat: string;
+    selectedFormat: Format;
     downLoadUrl: string;
     link: string;
     isDownLoading: boolean = false
@@ -34,9 +34,10 @@ export class DownloadComponent implements OnInit {
         ];
     }
     ngOnInit(): void {
-        this.selectedFormat = this.formats[0].key;
+        this.selectedFormat = this.formats[0];
 
-        this.downLoadUrl = 'https://yada-api.herokuapp.com/download?'
+        //this.downLoadUrl = 'https://yada-api.herokuapp.com/download?'
+        this.downLoadUrl = 'http://192.168.178.38:8000/download?'
     }
 
     setDownloadMode() {
@@ -51,7 +52,7 @@ export class DownloadComponent implements OnInit {
     }
 
     onErr(data) {
-        console.log("ERROR");
+        console.log(`ERROR downloading in format ${JSON.stringify(this.selectedFormat)}`);
 
         this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Fehler beim herunterladen des Videos' });
     }
